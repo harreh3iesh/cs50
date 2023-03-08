@@ -1,4 +1,8 @@
 '''
+Lesson: 004
+Faces
+03/06/2023
+
 In a file called faces.py,
 1. implement a function called convert that
     a. accepts a str as input
