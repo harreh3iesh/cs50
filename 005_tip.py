@@ -1,4 +1,9 @@
 '''
+Lesson: 002
+Tip calculator
+03/06/2023
+
+
 Implement two functions:
 
 1. dollars_to_float
