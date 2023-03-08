@@ -1,4 +1,7 @@
 '''
+Lesson: 003
+Einstine 
+03/06/2023
 Even if you haven’t studied physics (recently or ever!), you might have heard that
 E = mc^2
 Where:
