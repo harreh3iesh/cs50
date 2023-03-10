@@ -34,9 +34,12 @@ def convert(asciiEmote):
         return asciiEmote
 
 
-
+#something like this should work ok
+#but there's something wrong with this file unicode
+def convert2(asciiEmote):
+    return asciiEmote.replace(":)"", "🙂").replace(":(", "🙁")
 
 if __name__ == '__main__': # function called main that prompts the user for input
 
     asciiEmote = input("Enter any ascii emoticon ") # accepts a str as input
-    print(convert(asciiEmote))
+    print(convert2(asciiEmote))

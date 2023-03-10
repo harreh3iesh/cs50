@@ -12,9 +12,10 @@ In a file called indoor.py, implement a program in Python that
 Note: Punctuation and whitespace should be outputted unchanged.
 '''
 
-
+#Consider print(str(input("Enter any text: ")).lower())
 name = input("Enter any text ") # passing a str of your own as an argument to input.
 
 lowerCase = str.lower(name)
 
 print(lowerCase)
+

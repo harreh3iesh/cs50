@@ -12,6 +12,7 @@ In a file called playback.py, implement a program in Python that
 3. replacing each space with ... (i.e., three periods).
 '''
 
+#Consider print(str(input("Enter any text: ")).replace(" ","..."))
 text = input("Enter any text ") # passing a str of your own as an argument to input.
 
 replacement = text.replace(" ", "...")
