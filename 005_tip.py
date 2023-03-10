@@ -22,11 +22,22 @@ https://hackernoon.com/how-to-build-a-tip-calculator-in-python
 
 
 def dollars_to_float(d):
-    normalizeDollarString = d[1:]
+    normalizeDollarString = d[1:] #I was so happy when I saw you did this
     normalizeDollarFloat = float(normalizeDollarString)
+    #why not return float(d[1:])?
     return normalizeDollarFloat
 
-
+#Consider the following code:
+#>>> percent_to_float("10.00%")
+#10.0
+#>>> percent_to_float("10.01%")
+#10.0
+#>>> percent_to_float("10.03333%")
+#10.0
+#>>> float("10.03333%"[:-1])
+#10.03333
+#>>>
+#So I think return float(d[:-1]) should work great.
 def percent_to_float(p):
     normalizePercentString = p[:2]
     normalizePercentFloat = float(normalizePercentString)
@@ -37,4 +48,4 @@ if __name__ == '__main__':
     dollars = dollars_to_float(input("How much was the meal? "))
     percent = percent_to_float(input("What percentage would you like to tip? "))
     tip = float(dollars) * float(percent) / 100
-    print(f"Leave ${tip:.2f}")
+    print(f"Leave ${tip:.2f}") #Nice work!

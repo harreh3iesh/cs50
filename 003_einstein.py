@@ -1,6 +1,6 @@
 '''
 Lesson: 003
-Einstine 
+Einstein
 03/06/2023
 Even if you haven’t studied physics (recently or ever!), you might have heard that
 E = mc^2
@@ -17,7 +17,7 @@ Assume that the user will input an integer.
 '''
 
 
-def convertMass(massUserInput):
+def convert_mass(mass):
     '''
     Outputs the equivalent number of Joules as an integer.
     E = mc^2
@@ -25,11 +25,9 @@ def convertMass(massUserInput):
     E = Massinput(c^2)
     '''
 
+    c = 300000000
 
-    mass = massUserInput
-    speedOfLight = 300000000
-
-    energy = mass*(speedOfLight**2)
+    energy = mass*(c^2)
     print(energy)
     return energy
 
@@ -38,4 +36,4 @@ def convertMass(massUserInput):
 
 if __name__ == '__main__':
     massUserInput = int(input("Enter an integer for Mass (M) " ))
-    convertMass(massUserInput)
+    convert_mass(massUserInput)
