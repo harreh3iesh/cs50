@@ -4,14 +4,15 @@ using namespace std;
 
 class Person {
 private:
+    //declare all these on one line
     int days, hours, minutes;
 
 public:
     // Constructors
     Person() : days(0), hours(0), minutes(0) {}  // Initialize days, hours, and minutes to 0
-    Person(int days, int hours, int minutes) : days(days), hours(hours), minutes(minutes) {}
 
-    // No need for another constructor with the same parameters
+    //This is called initialization by a member initialization list.
+    Person(int days, int hours, int minutes) : days(days), hours(hours), minutes(minutes) {}
 
     // Member functions
     void inputDetails() {
@@ -63,6 +64,7 @@ public:
     }
 };
 
+// so now the problem is easy. 
 int main() {
     Person john, bill;
 
