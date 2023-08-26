@@ -1,52 +1,80 @@
-# include <iostream> 
+#include <iostream>
+#include <cstdlib>
 using namespace std;
 
-/* Suppose John and Bill worked for some time and need to calculte the total time both worked
-Write a program that reads number of days, hours, minutes each of them worked, and prints the total time both of them
-worked together as days, hours, minutes
-The expected output is given as 6 days, 3 hours, 35 minutes
+class Person {
+private:
+    int days, hours, minutes;
 
- */
+public:
+    // Constructors
+    Person() : days(0), hours(0), minutes(0) {}  // Initialize days, hours, and minutes to 0
+    Person(int days, int hours, int minutes) : days(days), hours(hours), minutes(minutes) {}
+
+    // No need for another constructor with the same parameters
+
+    // Member functions
+    void inputDetails() {
+        cout << "Please enter the number of days: ";
+        cin >> days;
+        cout << "Please enter the number of hours: ";
+        cin >> hours;
+        cout << "Please enter the number of minutes: ";
+        cin >> minutes;
+    }
+
+    int getTotalMinutes() const {
+        return days * 24 * 60 + hours * 60 + minutes;
+    }
+
+    // Setter methods
+    void setDays(int days) {
+        this->days = days;
+    }
+
+    void setHours(int hours) {
+        this->hours = hours;
+    }
+
+    void setMinutes(int minutes) {
+        this->minutes = minutes;
+    }
+
+    // Getter methods
+    int getDays() const {
+        return days;
+    }
+
+    int getHours() const {
+        return hours;
+    }
+
+    int getMinutes() const {
+        return minutes;
+    }
+
+    // Overload the subtraction operator
+    int operator-(const Person& other) const {
+        return abs(getTotalMinutes() - other.getTotalMinutes());
+    }
+
+    int operator+(const Person& other) const {
+        return getTotalMinutes() + other.getTotalMinutes();
+    }
+};
 
 int main() {
-    const int HOURS = 24; 
-    const int DAY = 1;
-    
-    int daysJohn;
-    int hoursJohn;
-    int minutesJohn;
+    Person john, bill;
 
-    int daysBill;
-    int hoursBill;
-    int minutesBill;
+    cout << "Enter details for John's work:" << endl;
+    john.inputDetails();
 
-    cout << "Please enter the number of days John worked: \n";
-    cin >> daysJohn; 
-    cout << "Please enter the number of hours John worked: \n";
-    cin >> hoursJohn; 
-    cout << "Please enter the number of minutes John worked: \n";
-    cin >> minutesJohn; 
+    cout << "Enter details for Bill's work:" << endl;
+    bill.inputDetails();
 
-    cout << "Please enter the number of days Bill worked: \n";
-    cin >> daysBill; 
-    cout << "Please enter the number of hours Bill worked: \n";
-    cin >> hoursBill; 
-    cout << "Please enter the number of minutes Bill worked: \n";
-    cin >> minutesBill;
+    int differenceInMinutes = john - bill;
 
-    
-    int totalMinutes = minutesJohn + minutesBill;  // 35 minutes
-    int totalHours = (hoursBill + hoursJohn) - HOURS; // 27 hours - 24 hours (day) == 3
-    int totalDays = daysJohn + daysBill + DAY; // 2 + 3 + 1 manually carried the day over since I knew I had 24 hours left over (27-24)
+    cout << "They worked together for " << differenceInMinutes << " minutes." << endl;
 
-
-    cout << "The total time both of them worked together is: " << totalDays << "days, " << totalHours << "hours, " << totalMinutes << "minutes";
-
-
-
-
-
-
-
-
+    return 0;
 }
